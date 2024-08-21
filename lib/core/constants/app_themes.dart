@@ -8,7 +8,7 @@ abstract class AppThemes {
     fontFamily: 'Montserrat',
     primaryColor: AppColors.materialPrimary,
     scaffoldBackgroundColor: AppColors.white,
-    splashColor: AppColors.materialPrimary.shade200,
+    splashColor: AppColors.materialPrimary.shade50,
     canvasColor: AppColors.white,
     iconTheme: const IconThemeData(
       color: AppColors.black10,
@@ -45,8 +45,8 @@ abstract class AppThemes {
       ),
       headlineMedium: TextStyle(
         fontSize: 26.sp,
-        fontWeight: FontWeight.w600,
-        color: AppColors.materialPrimary.shade800,
+        fontWeight: FontWeight.bold,
+        color: AppColors.black,
       ),
       headlineSmall: TextStyle(
         fontSize: 20.sp,
@@ -108,7 +108,7 @@ abstract class AppThemes {
     fontFamily: 'Montserrat',
     primaryColor: AppColors.materialPrimary,
     scaffoldBackgroundColor: AppColors.white,
-    splashColor: AppColors.materialPrimary.shade200,
+    splashColor: AppColors.materialPrimary.shade50,
     canvasColor: AppColors.gray.shade900,
     iconTheme: const IconThemeData(
       color: AppColors.white10,
@@ -142,8 +142,8 @@ abstract class AppThemes {
       headlineLarge: TextStyle(fontSize: 30.sp, color: AppColors.white, fontWeight: FontWeight.bold),
       headlineMedium: TextStyle(
         fontSize: 26.sp,
-        fontWeight: FontWeight.w600,
-        color: AppColors.materialPrimary.shade800,
+        fontWeight: FontWeight.bold,
+        color: AppColors.black,
       ),
       headlineSmall: TextStyle(
         fontSize: 20.sp,

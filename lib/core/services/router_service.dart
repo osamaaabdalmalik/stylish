@@ -4,6 +4,7 @@ import 'package:stylish/core/constants/app_keys.dart';
 import 'package:stylish/core/constants/app_routes.dart';
 import 'package:stylish/core/services/caching_service.dart';
 import 'package:stylish/features/main/presentation/screens/main_screen.dart';
+import 'package:stylish/features/main/presentation/screens/sign_in_screen.dart';
 import 'package:stylish/injection_container.dart';
 
 class RouterService {
@@ -14,7 +15,7 @@ class RouterService {
     String initialLocation = _cacheService.getData<String>(
           key: AppKeys.initialLocationRoute,
         ) ??
-        AppRoutes.mainScreen;
+        AppRoutes.signInScreen;
     router = GoRouter(
       routes: [
         //-------------------------------------------
@@ -25,6 +26,19 @@ class RouterService {
           pageBuilder: (context, state) => CustomTransitionPage(
             key: state.pageKey,
             child: const MainScreen(),
+            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              return FadeTransition(
+                opacity: animation,
+                child: child,
+              );
+            },
+          ),
+        ),
+        GoRoute(
+          path: AppRoutes.signInScreen,
+          pageBuilder: (context, state) => CustomTransitionPage(
+            key: state.pageKey,
+            child: const SignInScreen(),
             transitionsBuilder: (context, animation, secondaryAnimation, child) {
               return FadeTransition(
                 opacity: animation,

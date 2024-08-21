@@ -14,7 +14,7 @@ class PrimaryAppbar extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
       decoration: BoxDecoration(
-        color: AppColors.secondary0,
+        color: AppColors.secondary,
         borderRadius: BorderRadius.vertical(
           bottom: Radius.circular(25.r),
         ),

@@ -128,32 +128,32 @@ class _PrimaryTextFieldState extends State<PrimaryTextField> {
                           },
                           icon: isVisibleText
                               ? const Icon(
-                                  Icons.visibility,
+                                  Icons.visibility_off_outlined,
                                   color: AppColors.gray,
                                 )
                               : const Icon(
-                                  Icons.visibility_off,
+                                  Icons.visibility_outlined,
                                   color: AppColors.gray,
                                 ),
                         )
                       : null),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.r),
-                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.circular(10.r),
+                borderSide: const BorderSide(color: AppColors.gray,width: 1,),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.r),
-                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.circular(10.r),
+                borderSide: const BorderSide(color: AppColors.gray,width: 1,),
               ),
               errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.r),
-                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.circular(10.r),
+                borderSide: const BorderSide(color: AppColors.gray,width: 1,),
               ),
               focusedErrorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.r),
-                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.circular(10.r),
+                borderSide: const BorderSide(color: AppColors.gray,width: 1,),
               ),
-              contentPadding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 8),
+              contentPadding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 15.h),
             ),
             keyboardType: widget.inputType,
             obscureText: widget.isObscureText && !isVisibleText,

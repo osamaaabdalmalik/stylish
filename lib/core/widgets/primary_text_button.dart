@@ -1,6 +1,6 @@
-import 'package:stylish/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stylish/core/constants/app_colors.dart';
 
 class PrimaryTextButton extends StatelessWidget {
   final String label;
@@ -8,6 +8,7 @@ class PrimaryTextButton extends StatelessWidget {
   final Color backgroundColor;
   final FontWeight fontWeight;
   final double? fontSize;
+  final bool hasUnderLine;
   final void Function()? onPressed;
 
   const PrimaryTextButton({
@@ -17,6 +18,7 @@ class PrimaryTextButton extends StatelessWidget {
     this.fontWeight = FontWeight.w700,
     this.fontSize,
     this.onPressed,
+    this.hasUnderLine = false,
     super.key,
   });
 
@@ -37,6 +39,8 @@ class PrimaryTextButton extends StatelessWidget {
                 color: labelColor,
                 fontWeight: fontWeight,
                 fontSize: fontSize ?? 16.sp,
+                decoration: hasUnderLine ? TextDecoration.underline : null,
+                decorationColor: hasUnderLine ? labelColor : null,
               ),
         ),
       ),
