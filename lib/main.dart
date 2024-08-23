@@ -1,6 +1,4 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -14,17 +12,18 @@ import 'package:stylish/injection_container.dart';
 void main() async {
   await initSettings();
   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (c) => EasyLocalization(
-        supportedLocales: const [Locale('en'), Locale('ar'), Locale('tr')],
-        path: 'assets/translations',
-        startLocale: const Locale('en'),
-        fallbackLocale: const Locale('en'),
-        assetLoader: const CodegenLoader(),
-        child: const MyApp(),
-      ),
+    // DevicePreview(
+    //   enabled: !kReleaseMode,
+    //   builder: (c) =>
+    EasyLocalization(
+      supportedLocales: const [Locale('en'), Locale('ar'), Locale('tr')],
+      path: 'assets/translations',
+      startLocale: const Locale('en'),
+      fallbackLocale: const Locale('en'),
+      assetLoader: const CodegenLoader(),
+      child: const MyApp(),
     ),
+    // ),
   );
 }
 

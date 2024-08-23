@@ -135,16 +135,14 @@ class MainCubit extends Cubit<MainState> {
   }
 
   void changeCurrentTab(int index) {
-    if (index != 2) {
-      _update(const MainState.loading());
-      currentTab = index;
-      mainScreenPageController.animateToPage(
-        currentTab,
-        duration: const Duration(milliseconds: 1),
-        curve: Curves.easeIn,
-      );
-      _update(const MainState.changeTabSuccess());
-    }
+    _update(const MainState.loading());
+    currentTab = index;
+    mainScreenPageController.animateToPage(
+      currentTab,
+      duration: const Duration(milliseconds: 1),
+      curve: Curves.easeIn,
+    );
+    _update(const MainState.changeTabSuccess());
   }
 
   void changeCurrentPage(int index) {

@@ -25,8 +25,8 @@ class AppColors {
   //-------------------------------------------
 
   // Status Colors
-  static const Color danger = Color(0xFFFF0000);
-  static const Color warning = Color(0xFFDBBD2A);
+  static const Color danger = Color(0xFFD70000);
+  static const Color warning = Color(0xFFEDB310);
   static const Color success = Color(0xFF27D045);
 
   //-------------------------------------------
@@ -45,7 +45,7 @@ class AppColors {
   static const Color transparent = Colors.transparent;
 
   static const MaterialColor gray = Colors.grey;
-  static const Color blue = Color(0xFF37AEE2);
+  static const Color blue = Color(0xFF4392F9);
 
 ////-------------------------------------------
 }

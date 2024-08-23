@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,6 +31,7 @@ class MainScreen extends StatelessWidget {
             body: PrimaryLoader(),
           ),
           orElse: () => Scaffold(
+            resizeToAvoidBottomInset: false,
             body: PageView(
               controller: context.read<MainCubit>().mainScreenPageController,
               onPageChanged: context.read<MainCubit>().changeCurrentPage,
@@ -40,14 +43,18 @@ class MainScreen extends StatelessWidget {
               changeCurrentTab: context.read<MainCubit>().changeCurrentTab,
             ),
             floatingActionButton: Transform.translate(
-              offset: Offset(0, 40.h),
+              offset: Offset(0, 30.h),
               child: FloatingActionButton(
                 onPressed: () {},
-                backgroundColor: AppColors.white.withOpacity(0.6),
+                backgroundColor: AppColors.white,
+                elevation: 2,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50.r),
                 ),
-                child: SvgPicture.asset(AppAssets.image),
+                child: SvgPicture.asset(
+                  AppAssets.cart,
+                  color: context.read<MainCubit>().currentTab == 2 ? AppColors.primary : null,
+                ),
               ),
             ),
             floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

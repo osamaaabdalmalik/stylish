@@ -8,7 +8,7 @@ abstract class AppThemes {
     fontFamily: 'Montserrat',
     primaryColor: AppColors.materialPrimary,
     scaffoldBackgroundColor: AppColors.white,
-    splashColor: AppColors.materialPrimary.shade50,
+    splashColor: AppColors.materialPrimary.shade50.withOpacity(0.3),
     canvasColor: AppColors.white,
     iconTheme: const IconThemeData(
       color: AppColors.black10,
@@ -108,7 +108,7 @@ abstract class AppThemes {
     fontFamily: 'Montserrat',
     primaryColor: AppColors.materialPrimary,
     scaffoldBackgroundColor: AppColors.white,
-    splashColor: AppColors.materialPrimary.shade50,
+    splashColor: AppColors.materialPrimary.shade50.withOpacity(0.3),
     canvasColor: AppColors.gray.shade900,
     iconTheme: const IconThemeData(
       color: AppColors.white10,

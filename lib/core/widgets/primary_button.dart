@@ -9,8 +9,10 @@ class PrimaryButton extends StatelessWidget {
   final Color labelColor;
   final IconData? prefixIcon;
   final bool isOutlined;
+  final double? fontSize;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
+  final BorderRadius? borderRadius;
   final void Function()? onPressed;
 
   const PrimaryButton({
@@ -23,7 +25,9 @@ class PrimaryButton extends StatelessWidget {
     this.backgroundColor = AppColors.primary,
     this.labelColor = AppColors.white,
     this.padding,
+    this.fontSize,
     this.margin,
+    this.borderRadius,
   });
 
   @override
@@ -33,34 +37,33 @@ class PrimaryButton extends StatelessWidget {
       padding: margin ?? EdgeInsets.symmetric(horizontal: 25.w),
       child: MaterialButton(
         onPressed: onPressed,
-        color: isOutlined ? Theme.of(context).canvasColor : backgroundColor,
+        color: isOutlined ? AppColors.transparent : backgroundColor,
         disabledColor: AppColors.gray.withOpacity(0.5),
+        padding: padding ?? EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.r),
-          side: isOutlined ? BorderSide(color: backgroundColor) : BorderSide.none,
+          borderRadius: borderRadius ?? BorderRadius.circular(10.r),
+          side: isOutlined ? BorderSide(color: labelColor) : BorderSide.none,
         ),
         elevation: isOutlined ? 0 : null,
-        child: Padding(
-          padding: padding ?? EdgeInsets.symmetric(horizontal: 5.w, vertical: 10.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              if (prefixIcon != null) ...[
-                Icon(prefixIcon),
-                SizedBox(
-                  width: 5.w,
-                ),
-              ],
-              Text(
-                label,
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      color: labelColor,
-                      fontWeight: FontWeight.w700,
-                    ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              label,
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    color: labelColor,
+                    fontWeight: FontWeight.w700,
+                    fontSize: fontSize,
+                  ),
+            ),
+            if (prefixIcon != null) ...[
+              Icon(
+                prefixIcon,
+                color: AppColors.white,
               ),
             ],
-          ),
+          ],
         ),
       ),
     );
