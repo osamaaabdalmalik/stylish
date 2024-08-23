@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stylish/core/constants/app_assets.dart';
 import 'package:stylish/core/constants/app_colors.dart';
 import 'package:stylish/core/widgets/primary_icon_button.dart';
 import 'package:stylish/core/widgets/primary_sliver_appbar.dart';
+import 'package:stylish/features/main/presentation/cubits/main_cubit/main_cubit.dart';
 
 class HomeAppbar extends StatelessWidget {
   const HomeAppbar({super.key});
@@ -33,8 +35,17 @@ class HomeAppbar extends StatelessWidget {
                 AppAssets.logoApp,
               ),
             ),
-            Image.asset(
-              AppAssets.image,
+            PrimaryIconButton(
+              icon: Image.asset(
+                AppAssets.profileImage,
+                width: 40.w,
+              ),
+              onPressed: () {
+                context.read<MainCubit>().changeCurrentTab(4);
+              },
+              color: AppColors.gray,
+              borderRadius: BorderRadius.circular(30.r),
+              padding: EdgeInsets.zero,
             ),
           ],
         ),

@@ -16,17 +16,17 @@ abstract class AppThemes {
     colorScheme: const ColorScheme.light(
       primary: AppColors.materialPrimary,
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       color: AppColors.white,
-      iconTheme: const IconThemeData(
+      iconTheme: IconThemeData(
         color: AppColors.black10,
       ),
       elevation: 2,
       scrolledUnderElevation: 0,
       titleSpacing: 1,
       systemOverlayStyle: SystemUiOverlayStyle(
-        systemNavigationBarColor: SystemUiOverlayStyle.dark.systemNavigationBarColor,
-        statusBarColor: AppColors.white,
+        systemNavigationBarColor: AppColors.transparent,
+        statusBarColor: AppColors.transparent,
         statusBarIconBrightness: Brightness.dark,
       ),
     ),

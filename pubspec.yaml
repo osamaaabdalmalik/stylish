@@ -49,6 +49,19 @@ dev_dependencies:
 
   flutter_lints: ^3.0.0
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"
+
+flutter_native_splash:
+  color: "#FFF2F5"
+  image: assets/images/splash_screen.png
+  android_12:
+    color: "#FFF2F5"
+    image: assets/images/app_icon.png
+
+
 flutter:
 
   uses-material-design: true

@@ -1,10 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stylish/core/constants/app_colors.dart';
 import 'package:stylish/core/constants/app_keys.dart';
 import 'package:stylish/core/enums/general_states.dart';
 import 'package:stylish/core/services/caching_service.dart';
 import 'package:stylish/features/main/presentation/screens/home_tab.dart';
+import 'package:stylish/features/main/presentation/screens/profile_tab.dart';
 import 'package:stylish/injection_container.dart';
 
 part 'main_cubit.freezed.dart';
@@ -29,12 +32,34 @@ class MainCubit extends Cubit<MainState> {
   ThemeMode currentThemeMode = ThemeMode.system;
   List<Widget> tabs = [
     const HomeTab(),
-    const HomeTab(),
-    const Center(
-      child: Text('Empty'),
+    Center(
+      child: Text(
+        'Wishlist',
+        style: TextStyle(
+          color: AppColors.primary,
+          fontSize: 24.sp,
+        ),
+      ),
     ),
-    const HomeTab(),
-    const HomeTab(),
+    Center(
+      child: Text(
+        'Cart',
+        style: TextStyle(
+          color: AppColors.primary,
+          fontSize: 24.sp,
+        ),
+      ),
+    ),
+    Center(
+      child: Text(
+        'Search',
+        style: TextStyle(
+          color: AppColors.primary,
+          fontSize: 24.sp,
+        ),
+      ),
+    ),
+    const ProfileTab(),
   ];
 
   /// variables
